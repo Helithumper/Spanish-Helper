@@ -3,7 +3,7 @@ package com.peyton.gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -14,6 +14,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import com.peyton.util.Utilities;
 
 public class MainFrame extends JFrame implements ActionListener, FocusListener {
 
@@ -64,6 +66,7 @@ public class MainFrame extends JFrame implements ActionListener, FocusListener {
 		verbPanel.add(verbButton, BorderLayout.SOUTH);
 
 		setLayout(new GridLayout(3, 1));
+		//setLayout(new FlowLayout());
 		add(title);
 		add(wordPanel);
 		add(verbPanel);
@@ -78,9 +81,9 @@ public class MainFrame extends JFrame implements ActionListener, FocusListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(wordBox) || e.getSource().equals(wordButton)) {
-			System.out.println("WORD SENT");
+			Utilities.openInBrowser("http://www.spanishdict.com/translate/" + wordBox.getText());
 		} else if (e.getSource().equals(verbBox) || e.getSource().equals(verbButton)) {
-			System.out.println("VERB SENT");
+			Utilities.openInBrowser("http://www.verbix.com/webverbix/Spanish/"+verbBox.getText()+".html");
 		}
 
 	}
