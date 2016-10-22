@@ -26,12 +26,12 @@ public class MainFrame extends JFrame implements ActionListener, FocusListener {
 
 	JLabel titlelabel = new JLabel();
 
-	JLabel wordText = new JLabel("Palabra:");
+	JLabel wordText = new JLabel("Spanishdict");
 	JTextField wordBox = new JTextField("~[PALABRA]~");
 	JButton wordButton = new JButton("Buscar");
 
-	JLabel verbText = new JLabel("Verbo:");
-	JTextField verbBox = new JTextField("~[VERBO]~");
+	JLabel verbText = new JLabel("Verbix");
+	JTextField verbBox = new JTextField("~[PALABRA]~");
 	JButton verbButton = new JButton("Buscar");
 
 	Color originalBoxColor;
